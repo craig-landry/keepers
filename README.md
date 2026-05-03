@@ -27,7 +27,10 @@ Keepers is fully vibe coded. See AGENTS.md file for details of how it is built. 
 ### Sample Data
 The `sample-images/` directory contains real photos from a Fuji XE-4. 
 
-### Architecture Strategy
-To facilitate development without a physical camera, the system uses a modular adapter pattern for image sources:
-- **Local Filesystem Adapter:** Points to the `sample-images/` directory for offline development.
-- **MTP Camera Adapter:** Connects to a physical camera (e.g., Fuji XE-4) for production use.
+### Core Philosophy: Source-to-Destination
+Keepers is not a local photo management or storage tool. Its purpose is to act as a high-speed conduit between the source (e.g., your camera) and final destinations.
+
+- **Work from Source:** The program operates directly on files from the connected source (Camera via MTP or local samples).
+- **Selection over Storage:** The goal is to identify "keeper" images and dispatch them immediately.
+- **API-First Destinations:** Photos are sent to external services like digital photo frame APIs and Immich servers.
+- **Transient Caching:** For performance, images may be cached in a local temporary directory. This is strictly a transient cache and should not be treated as a permanent copy or backup.
