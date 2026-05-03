@@ -23,3 +23,11 @@ python3 -m pip install -t venv/lib/python3.14/site-packages -r requirements.txt
 
 ## Development
 Keepers is fully vibe coded. See AGENTS.md file for details of how it is built. Like development, design aspects are also done primarily with AI with use of [Open Design](https://github.com/nexu-io/open-design/tree/main). 
+
+### Sample Data
+The `sample-images/` directory contains real photos from a Fuji XE-4. 
+
+### Architecture Strategy
+To facilitate development without a physical camera, the system uses a modular adapter pattern for image sources:
+- **Local Filesystem Adapter:** Points to the `sample-images/` directory for offline development.
+- **MTP Camera Adapter:** Connects to a physical camera (e.g., Fuji XE-4) for production use.

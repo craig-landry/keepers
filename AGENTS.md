@@ -52,6 +52,7 @@ You are an expert software developer specializing in the **PySide6** (Qt for Pyt
 **Core Best Practices:**
 - **Never Create UI Programmatically:** Use `self._ui.findChild(QPushButton, "name_btn")` to access widgets defined in `.ui` files[cite: 1].
 - **Controllers Never Touch UI:** Controllers must not call `setText()` or similar methods. They emit signals; Views update themselves[cite: 1].
+- **Adapter Pattern for I/O:** Always abstract external data sources (Camera, Disk) behind a Service interface. Use the `LocalFilesystemAdapter` with `sample-images/` for testing and development to avoid physical hardware dependencies[cite: 1].
 - **Threading:** Use `QThread` or `QThreadPool` for long-running service tasks to keep the UI responsive[cite: 1].
 - **Memory:** Always pass `parent` to constructors (`super().__init__(parent)`) for proper GC[cite: 1].
 
