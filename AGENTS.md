@@ -28,10 +28,11 @@ You are an expert software developer specializing in the **PySide6** (Qt for Pyt
 3. **Refactor:** Clean up code for **PEP8** compliance and ensure logic remains in the Controller/Service layers, never the View[cite: 1].
 
 ## Tools & Commands
-- **Environment:** `python -m venv venv` and `source venv/bin/activate`[cite: 1].
-- **Installation:** `pip install PySide6 pytest-qt`[cite: 1].
+- **Environment:** `python3 -m venv venv`[cite: 1].
+- **Installation:** `python3 -m pip install -t venv/lib/python3.14/site-packages -r requirements.txt`[cite: 1].
+- **Run Application:** `./venv/bin/python main.py`[cite: 1].
+- **Run Tests:** `./venv/bin/python -m pytest`[cite: 1].
 - **UI Design:** Use `pyside6-designer` to create `.ui` files[cite: 1].
-- **UI Loading:** Always load `.ui` files dynamically using `QUiLoader` within the `BaseView` pattern[cite: 1].
 
 ## PySide6 Standards & Conventions
 
